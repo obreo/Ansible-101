@@ -1,0 +1,9 @@
+- name: instareboot  #Play name
+  hosts: linux   #group specified
+  tasks:
+    - name: reboot ec2 instance #module 1
+      shell:
+        "sudo su && reboot"
+      register: os_info         #save command output in os_info
+    - debug:                    #resturn output
+        msg: ""

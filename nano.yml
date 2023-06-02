@@ -1,0 +1,10 @@
+---
+- name: nano-checker     #Play
+  hosts: linux                      #group specified
+  become: true      
+
+  tasks:                                
+    - name: Check if nano installed          #task1
+      yum:                          # modlule 1
+        name: nano                  #package name
+        state: latest               #check if latest version available. You can used "present" as well.

@@ -1,0 +1,12 @@
+---
+- name: Run multiple shell commands     #Play
+  hosts: linux                      #group specified
+  become: true      
+
+  tasks:                                
+    - name: Run shell commands          #task1
+      shell: |                          # modlule 1: shell. The | symbol used to write multiple cammands 
+        sudo yum install httpd -y
+        echo "This page was configured by Ansible" >> /var/www/html/index.html
+        service httpd restart
+        echo "Done"
